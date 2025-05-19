@@ -2,8 +2,6 @@
 /* GENERAL CSS */
 /*******************************/
 
-
-
 /*
 
 --- 01 TYPOGRAPHY SYSTEM ---
@@ -80,7 +78,6 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
-  
 }
 
 /*******************************/
@@ -136,17 +133,18 @@ body {
   letter-spacing: -0.5px;
 }
 
-
-
-
 /*******************************/
 /* ANIMAYION HEADING */
 /*******************************/
 
 .heading-primary {
-  opacity: 0;                       /* start invisible */
+  opacity: 0; /* start invisible */
   animation: fadeInDown 0.8s ease-out forwards;
-  animation-delay: 0.3s;            /* wait 0.3s before starting */
+  animation-delay: 0.3s; /* wait 0.3s before starting */
+
+  font-size: 5.1rem;
+  line-height: 1.2;
+  margin-bottom: 2.8rem;
 }
 @keyframes fadeInDown {
   0% {
@@ -201,7 +199,7 @@ body {
 }
 .btn--full:link,
 .btn--full:visited {
-  background: #5F48D9;
+  background: #5f48d9;
   color: #fff;
 }
 .btn--full:hover,
@@ -211,7 +209,7 @@ body {
 .btn--outline:link,
 .btn--outline:visited {
   background-color: #fff;
-  color: #5F48D9;
+  color: #5f48d9;
 }
 .btn--outline:hover,
 .btn--outline:active {
@@ -266,7 +264,7 @@ body {
 .list-icon {
   width: 3rem;
   height: 3rem;
-  color: #5F48D9;
+  color: #5f48d9;
 }
 
 /* HELPER/SETTINGS CLASSES */
@@ -286,26 +284,6 @@ body {
 strong {
   font-weight: 500;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*******************************/
 /* HEADER */
@@ -333,9 +311,7 @@ strong {
   background-clip: text;
   color: transparent;
   font-size: 120px;
-
 }
-
 
 .logo {
   height: 2.2rem;
@@ -384,11 +360,10 @@ strong {
 /*******************************/
 .section-hero {
   position: relative;
-  overflow: hidden;    /* clip the blurred blobs */
-    background-color: #efedfb;
-    padding: 4.8rem 0;
-    height: 100vh;
-  
+  overflow: hidden; /* clip the blurred blobs */
+  background-color: #efedfb;
+  padding: 4.8rem 0;
+  height: 100vh;
 }
 
 /* make sure your real hero content sits above the blobs */
@@ -403,9 +378,9 @@ strong {
   width: 35rem;
   height: 35rem;
   border-radius: 50%;
-  filter: blur(50px);               /* heavy blur */
-  opacity: 0.6;                      /* soften intensity */
-  transform: translateZ(0);          /* GPU-accelerate */
+  filter: blur(50px); /* heavy blur */
+  opacity: 0.6; /* soften intensity */
+  transform: translateZ(0); /* GPU-accelerate */
 }
 
 /* first blob — top left */
@@ -422,26 +397,45 @@ strong {
   background: linear-gradient(45deg, #5f48d9, #afa4ec);
 }
 
-
-
-
 /* more dramatic, multi-point float for shape--one */
 @keyframes float1 {
-  0%   { transform: translate(0,   0)    scale(1)   rotate(0deg); }
-  25%  { transform: translate(30px, -20px) scale(1.2) rotate(15deg); }
-  50%  { transform: translate(-20px, 30px) scale(1)   rotate(-10deg); }
-  75%  { transform: translate(20px, 20px)  scale(1.1) rotate(10deg); }
-  100% { transform: translate(0,    0)    scale(1)   rotate(0deg); }
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -20px) scale(1.2) rotate(15deg);
+  }
+  50% {
+    transform: translate(-20px, 30px) scale(1) rotate(-10deg);
+  }
+  75% {
+    transform: translate(20px, 20px) scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
 }
 
 /* a different path for shape--two */
 @keyframes float2 {
-  0%   { transform: translate(0,    0)    scale(1)    rotate(0deg); }
-  20%  { transform: translate(-30px, 20px) scale(1.1)  rotate(-15deg); }
-  40%  { transform: translate(25px, -25px) scale(1)    rotate(10deg); }
-  60%  { transform: translate(-15px, 15px) scale(1.2)  rotate(-5deg); }
-  80%  { transform: translate(15px, -10px) scale(1)    rotate(5deg); }
-  100% { transform: translate(0,     0)    scale(1)    rotate(0deg); }
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  20% {
+    transform: translate(-30px, 20px) scale(1.1) rotate(-15deg);
+  }
+  40% {
+    transform: translate(25px, -25px) scale(1) rotate(10deg);
+  }
+  60% {
+    transform: translate(-15px, 15px) scale(1.2) rotate(-5deg);
+  }
+  80% {
+    transform: translate(15px, -10px) scale(1) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
 }
 
 /* apply these to your blobs */
@@ -457,16 +451,16 @@ strong {
 
 .rocket-bg {
   width: 700px;
-  
-    position: absolute;
-    bottom:1rem;     
-    right: 1rem;      
-    height: auto;
-    filter: blur(5px);/
-    opacity: 0.5;      
-    transform: translateZ(0);
-    z-index: 0;        
-    animation: float2 12s ease-in-out infinite; 
+
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  height: auto;
+  filter: blur(5px);
+  opacity: 0.5;
+  transform: translateZ(0);
+  z-index: 0;
+  animation: float2 12s ease-in-out infinite;
 }
 
 .section-text-box {
@@ -475,20 +469,14 @@ strong {
 
 .rocket {
   position: absolute;
-  bottom: 5rem;   
-  left: 1rem;      
-  width: 200px;   
+  bottom: 5rem;
+  left: 1rem;
+  width: 200px;
   height: auto;
   pointer-events: none;
   opacity: 0.9;
   z-index: 40;
 }
-
-
-
-
-
-
 
 /* ---------- before new code ------------ */
 
@@ -500,26 +488,17 @@ strong {
   align-items: center;
 }
 
-
-
-
-.heading-primary {
-  font-size: 5.1rem;
-line-height: 1.5;
-    margin-bottom: 3.2rem;
-}
-
 /* animation hero desc */
 
 .hero-description {
   font-size: 2rem;
   line-height: 1.5;
-  margin-bottom: 4.8rem;
+  margin-bottom: 3.2rem;
 }
 .hero-description {
-  opacity: 0;                                 /* start hidden */
+  opacity: 0; /* start hidden */
   animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.8s;                      /* start after your H1 */
+  animation-delay: 0.8s; /* start after your H1 */
 }
 
 @keyframes fadeInUp {
@@ -543,7 +522,6 @@ line-height: 1.5;
   gap: 1.6rem;
   margin-top: 10rem;
   justify-content: center;
-  
 }
 
 .delivered-imgs {
@@ -588,9 +566,6 @@ line-height: 1.5;
   color: #888;
 }
 
-
-
-
 /* animation section featured */
 
 /* ۱) overflow:hidden روی logos برای مخفی کردن بیرون‌زده */
@@ -611,9 +586,9 @@ line-height: 1.5;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-shrink: 0;     /* منع کوچک شدن */
-  min-width: 100%;    /* هر گروه برابر عرض logos */
-  gap: 3rem;          /* فاصلهٔ بین آیکن‌ها */
+  flex-shrink: 0; /* منع کوچک شدن */
+  min-width: 100%; /* هر گروه برابر عرض logos */
+  gap: 3rem; /* فاصلهٔ بین آیکن‌ها */
 }
 
 /* ۴) استایل آیکن */
@@ -625,10 +600,13 @@ line-height: 1.5;
 
 /* ۵) خودِ انیمیشن */
 @keyframes scrollX {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
-
 
 /*******************************/
 /* HOW IT WORKS SECTION */
@@ -636,8 +614,6 @@ line-height: 1.5;
 
 .section-how {
   padding: 9.6rem 0;
-  
-
 }
 
 .step-img-box {
@@ -1104,9 +1080,6 @@ line-height: 1.5;
   color: #333;
 }
 
-
-
-
 /* ------ NEW CARDS ------- */
 
 .card {
@@ -1114,10 +1087,8 @@ line-height: 1.5;
   border-radius: 16px;
   overflow: hidden;
   width: 320px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .img__courses {
   width: 100%;
@@ -1126,8 +1097,9 @@ line-height: 1.5;
 
 .card__label {
   position: absolute;
-  top: 12px; right: 12px;
-  background: rgba(0,0,0,0.7);
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   font-size: 12px;
   padding: 4px 8px;
@@ -1136,7 +1108,7 @@ line-height: 1.5;
 
 /* بخش متن */
 .card__body {
- padding: 1.2rem;
+  padding: 1.2rem;
 }
 .card__title {
   font-size: 2.2rem;
@@ -1156,10 +1128,20 @@ line-height: 1.5;
   color: #555;
   margin-bottom: 1rem;
 }
-.icon { display: inline-block; width: 1rem; height: 1rem; margin-right: 0.4rem; fill: #f7c948; }
-.icon--star { fill: #f7c948; }
+.icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.4rem;
+  fill: #f7c948;
+}
+.icon--star {
+  fill: #f7c948;
+}
 .icon--clock,
-.icon--graduation { fill: #5f48d9; }
+.icon--graduation {
+  fill: #5f48d9;
+}
 
 /* تگ‌ها */
 .card__tags {
