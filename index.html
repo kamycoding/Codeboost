@@ -15,6 +15,9 @@
     <title>Codeboost</title>
   </head>
   <body>
+
+    <!-- HEADER -->
+
     <header class="header">
       <a href="#">
         <img src="./img/logo-codeboost.png" alt="codeboost-logo" class="logo" />
@@ -29,22 +32,32 @@
         </ul>
       </nav>
     </header>
+
+    <!-- MAIN -->
+
     <main>
+      <img src="./img/psd_3d_render_rocket_ioslated_on_background.png" alt="Rocket" class="rocket" />
+
       <section class="section-hero">
+        
+        <div class="shape shape--one"></div>
+        <div class="shape shape--two"></div>
+        <img src="./img/psd_3d_render_rocket_ioslated_on_background.png" alt="rocket" class="rocket-bg" />
+
         <div class="hero">
           <div class="section-text-box">
             <h1 class="heading-primary">
-              Learn to code and build projects, every single day
+              
+              Learn to code and build project,every <br><span class="highlight">{single day}</span>
             </h1>
             <p class="hero-description">
-              The smartest way to master programming with hands-on projects and
-              AI-powered learning. Personalized for beginners & professionals to
-              level up their skills.
+              Master coding faster with hands-on projects and AI-powered guidance—tailored for every skill level!
             </p>
             <a href="#" class="btn btn--full margin-right-sm"
               >Start Learning Now</a
             >
-            <a href="#" class="btn btn--outline">Learn more &rarr;</a>
+            <!-- <a href="#" class="btn btn--outline">Learn more &rarr;</a> -->
+
             <div class="delivered-meals">
               <div class="delivered-imgs">
                 <img
@@ -77,27 +90,45 @@
               </p>
             </div>
           </div>
-          <div class="hero-img-box">
+          <!-- <div class="hero-img-box">
             <img
               src="./img/Hero-img.png"
               class="hero-img"
               alt="woman enjoying food, meals in storage container, and food bowls on a table"
             />
-          </div>
+          </div> -->
         </div>
       </section>
 
+
+      <!-- SECTION FEATURED -->
       <section class="section-featured">
         <div class="container">
           <h2 class="heading-featured-in">Hired by top companies</h2>
           <div class="logos">
-            <ion-icon name="logo-facebook"></ion-icon>
-            <ion-icon name="logo-windows"></ion-icon>
-            <ion-icon name="logo-apple"></ion-icon>
-            <ion-icon name="logo-android"></ion-icon>
+            <div class="marquee">
+              <!-- گروه اول آیکن‌ها -->
+              <div class="marquee__group">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-windows"></ion-icon>
+                <ion-icon name="logo-apple"></ion-icon>
+                <ion-icon name="logo-android"></ion-icon>
+              </div>
+              <!-- گروه دوم (کپی برای تداوم) -->
+              <div class="marquee__group" aria-hidden="true">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-windows"></ion-icon>
+                <ion-icon name="logo-apple"></ion-icon>
+                <ion-icon name="logo-android"></ion-icon>
+              </div>
+            </div>
           </div>
         </div>
+        
       </section>
+
+      <!-- section-courses -->
+
 
       <section class="section-courses">
         <div class="container center-text">
@@ -109,33 +140,26 @@
 
         <div class="container grid grid--3--cols margin-bottom-md">
           <div class="course">
-            <img
-              src="img/img-courses/javascript1-1.jpg"
-              class="course-img"
-              alt="meal img"
-            />
-            <div class="course-content">
-              <div class="meal-tags">
-                <span class="tag tag--javascript">JavaScript</span>
+            <div class="card__media">
+              <img class="img__courses"  src="./img/js-card.png" alt="JavaScript Logo">
+              <span class="card__label">Frontend</span>
+            </div>
+            <!-- محتوا -->
+            <div class="card__body">
+              <h3 class="card__title">JavaScript Practices</h3>
+              <p class="card__subtitle">Project-Based Exercises All Levels</p>
+              <div class="card__rating">
+                <svg class="icon icon--star" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.5 11.545 1 7.91l6.061-.909L10 1l2.939 6.001L19 7.91l-4.5 3.635 1.378 6.545z"/></svg>
+                4.8 (138)
               </div>
-              <p class="course-title">JavaScript</p>
-              <ul class="meal-attributes">
-                <li class="meal-attribute">
-                  <ion-icon class="course-icon" name="time-outline"></ion-icon
-                  ><span><strong>40</strong> hours</span>
-                </li>
-                <li class="meal-attribute">
-                  <ion-icon
-                    class="course-icon"
-                    name="checkmark-circle-outline"
-                  ></ion-icon
-                  ><span>Perfect for <strong>beginners</strong></span>
-                </li>
-                <li class="meal-attribute">
-                  <ion-icon class="course-icon" name="star-outline"></ion-icon
-                  ><span><strong>4.9</strong> rating (537)</span>
-                </li>
+              <ul class="card__tags">
+                <li><svg class="icon icon--clock" viewBox="0 0 20 20"><path d="M10 1a9 9 0 100 18A9 9 0 0010 1zm1 9.5H9V5h2v5.5z"/></svg> 48 Hours</li>
+                <li><svg class="icon icon--graduation" viewBox="0 0 20 20"><path d="M10 2L2 6l8 4 8-4-8-4zm0 6.1L4.07 6 10 3.9 15.93 6 10 8.1zM4 8.9v4.5l6 3.5 6-3.5V8.9l-6 3-6-3z"/></svg> 10 Mini Courses</li>
               </ul>
+              <p class="card__description">
+                Lorem ipsum dolor sit amet consectetur. Platea etiam vitae sed eget varius egestas. Massa nulla malesuada vestibulum aliquet quis ut.
+              </p>
+              <a href="#" class="btn btn--primary">Start Practicing</a>
             </div>
           </div>
           <div class="course">
@@ -203,6 +227,14 @@
         </div>
       </section>
 
+
+
+
+      <!-- section-how -->
+
+
+
+
       <section class="section-how">
         <div class="container">
           <span class="subheading">How it works</span>
@@ -263,6 +295,10 @@
           </div>
         </div>
       </section>
+
+
+      <!-- section-testomonials -->
+
 
       <section class="section-testomonials">
         <div class="testomonials-container">
@@ -609,5 +645,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   </body>
 </html>

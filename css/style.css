@@ -13,9 +13,20 @@
 
   position: sticky;
   top: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);  
-  z-index: 1000;  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+  z-index: 1000;
 }
+
+.highlight {
+  background: linear-gradient(to right, #828282, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 120px;
+
+}
+
 
 .logo {
   height: 2.2rem;
@@ -62,25 +73,156 @@
 /*******************************/
 /* HERO SECTION */
 /*******************************/
+.section-hero {
+  position: relative;
+  overflow: hidden;    /* clip the blurred blobs */
+}
 
+/* common shape defaults */
+.shape {
+  position: absolute;
+  width: 35rem;
+  height: 35rem;
+  border-radius: 50%;
+  filter: blur(50px);               /* heavy blur */
+  opacity: 0.6;                      /* soften intensity */
+  transform: translateZ(0);          /* GPU-accelerate */
+}
+
+/* first blob — top left */
+.shape--one {
+  top: -8rem;
+  left: 50rem;
+  background: linear-gradient(45deg, #afa4ec, #5f48d9);
+}
+
+/* second blob — bottom right */
+.shape--two {
+  bottom: -7rem;
+  right: -8rem;
+  background: linear-gradient(45deg, #5f48d9, #afa4ec);
+}
+
+/* make sure your real hero content sits above the blobs */
+.section-hero .hero {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* more dramatic, multi-point float for shape--one */
+@keyframes float1 {
+  0%   { transform: translate(0,   0)    scale(1)   rotate(0deg); }
+  25%  { transform: translate(30px, -20px) scale(1.2) rotate(15deg); }
+  50%  { transform: translate(-20px, 30px) scale(1)   rotate(-10deg); }
+  75%  { transform: translate(20px, 20px)  scale(1.1) rotate(10deg); }
+  100% { transform: translate(0,    0)    scale(1)   rotate(0deg); }
+}
+
+/* a different path for shape--two */
+@keyframes float2 {
+  0%   { transform: translate(0,    0)    scale(1)    rotate(0deg); }
+  20%  { transform: translate(-30px, 20px) scale(1.1)  rotate(-15deg); }
+  40%  { transform: translate(25px, -25px) scale(1)    rotate(10deg); }
+  60%  { transform: translate(-15px, 15px) scale(1.2)  rotate(-5deg); }
+  80%  { transform: translate(15px, -10px) scale(1)    rotate(5deg); }
+  100% { transform: translate(0,     0)    scale(1)    rotate(0deg); }
+}
+
+/* apply these to your blobs */
+.shape--one {
+  animation: float1 10s ease-in-out infinite;
+  /* keep the existing blur & background */
+}
+
+.shape--two {
+  animation: float2 12s ease-in-out infinite;
+  /* keep the existing blur & background */
+}
+
+.rocket-bg {
+  width: 700px;
+  
+    position: absolute;
+    bottom:1rem;     /* تنظیم جای عمودی */
+    right: 1rem;      /* تنظیم جای افقی */
+    height: auto;
+    filter: blur(5px);/* بلور سنگین */
+    opacity: 0.5;      /* کمی شفاف */
+    transform: translateZ(0);
+    z-index: 0;        /* پشت محتوا */
+    animation: float2 12s ease-in-out infinite; /* اگر می‌خوای تکون بخوره */
+  
+  
+  
+}
+
+.section-text-box {
+  position: relative;
+}
+
+.rocket {
+  position: absolute;
+  bottom: 5rem;    /* فاصله از پایین باکس متن */
+  left: 1rem;      /* فاصله از چپ باکس متن */
+  width: 200px;    /* عرض موشک */
+  height: auto;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 40;
+}
+
+
+
+
+
+
+
+/* ---------- before new code ------------ */
 .section-hero {
   background-color: #efedfb;
   padding: 4.8rem 0;
+  height: 80vh;
 }
 .hero {
   max-width: 130rem;
   margin: 0 auto;
   padding: 3.2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9.6rem;
+  text-align: center;
   align-items: center;
 }
+
+
+
+
+.heading-primary {
+  font-size: 5.1rem;
+line-height: 1.5;
+    margin-bottom: 3.2rem;
+}
+
+/* animation hero desc */
 
 .hero-description {
   font-size: 2rem;
   line-height: 1.5;
   margin-bottom: 4.8rem;
+}
+.hero-description {
+  opacity: 0;                                 /* start hidden */
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;                      /* start after your H1 */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-img {
@@ -90,8 +232,10 @@
 .delivered-meals {
   display: flex;
   align-items: center;
-  margin-top: 8rem;
   gap: 1.6rem;
+  margin-top: 10rem;
+  justify-content: center;
+  
 }
 
 .delivered-imgs {
@@ -136,16 +280,47 @@
   color: #888;
 }
 
+
+
+
+/* animation section featured */
+
+/* ۱) overflow:hidden روی logos برای مخفی کردن بیرون‌زده */
 .logos {
-  display: flex;
-  justify-content: space-around;
+  overflow: hidden;
+  width: 100%;
 }
 
+/* ۲) کانتینر متحرک */
+.logos .marquee {
+  display: flex;
+  /* مدت زمان ۲۰ ثانیه، خطی و بی‌نهایت */
+  animation: scrollX 20s linear infinite;
+}
+
+/* ۳) گروه‌ها حتماً min-width:100% */
+.logos .marquee__group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;     /* منع کوچک شدن */
+  min-width: 100%;    /* هر گروه برابر عرض logos */
+  gap: 3rem;          /* فاصلهٔ بین آیکن‌ها */
+}
+
+/* ۴) استایل آیکن */
 .logos ion-icon {
   font-size: 4.5rem;
   filter: brightness(0);
-  opacity: 50%;
+  opacity: 0.5;
 }
+
+/* ۵) خودِ انیمیشن */
+@keyframes scrollX {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
 
 /*******************************/
 /* HOW IT WORKS SECTION */
@@ -153,6 +328,8 @@
 
 .section-how {
   padding: 9.6rem 0;
+  
+
 }
 
 .step-img-box {
@@ -198,7 +375,7 @@
 }
 
 .step-img {
-  width: 35%;
+  width: 50%;
 }
 
 /*******************************/
@@ -218,7 +395,7 @@
 
 .course:hover {
   transform: translateY(-1.2rem);
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3.2rem 6.4rem rgba(196, 160, 211, 0.525);
 }
 
 .course-content {
@@ -617,4 +794,105 @@
 .footer-link:hover,
 .footer-link:active {
   color: #333;
+}
+
+
+
+
+/* ------ NEW CARDS ------- */
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 320px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+
+
+.img__courses {
+  width: 100%;
+  padding: 1rem;
+}
+
+.card__label {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+/* بخش متن */
+.card__body {
+ padding: 1.2rem;
+}
+.card__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #130e2b;
+}
+.card__subtitle {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+.card__rating {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.icon { display: inline-block; width: 1rem; height: 1rem; margin-right: 0.4rem; fill: #f7c948; }
+.icon--star { fill: #f7c948; }
+.icon--clock,
+.icon--graduation { fill: #5f48d9; }
+
+/* تگ‌ها */
+.card__tags {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.card__tags li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #5f48d9;
+  border: 1px solid #5f48d9;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+}
+
+/* توضیحات */
+.card__description {
+  font-size: 0.875rem;
+  color: #777;
+  line-height: 1.4;
+  margin-bottom: 1.6rem;
+}
+
+/* دکمه */
+.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: background 0.2s;
+}
+.btn--primary {
+  background: #5f48d9;
+  color: #fff;
+}
+.btn--primary:hover {
+  background: #5641c3;
 }

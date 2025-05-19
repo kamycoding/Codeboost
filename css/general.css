@@ -74,6 +74,7 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+  
 }
 
 /*******************************/
@@ -128,11 +129,22 @@ body {
   font-weight: 700;
   letter-spacing: -0.5px;
 }
+/* animation heading primary */
 
 .heading-primary {
-  font-size: 5.1rem;
-  line-height: 1.05;
-  margin-bottom: 3.2rem;
+  opacity: 0;                       /* start invisible */
+  animation: fadeInDown 0.8s ease-out forwards;
+  animation-delay: 0.3s;            /* wait 0.3s before starting */
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .heading-secondary {
@@ -163,8 +175,8 @@ body {
   display: inline-block;
   font-size: 2rem;
   font-weight: 600;
-  padding: 1.6rem 3.2rem;
-  border-radius: 9px;
+  padding: 1.8rem 3.2rem;
+  border-radius: 50px;
   text-decoration: none;
 
   /*only necessary for .btn*/
