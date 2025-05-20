@@ -116,17 +116,15 @@
         </div>
         <div class="logos">
           <div class="marquee">
-            <!-- گروه اول آیکن‌ها -->
             <div class="marquee__group">
               <ion-icon name="logo-facebook"></ion-icon>
               <ion-icon name="logo-windows"></ion-icon>
               <ion-icon name="logo-apple"></ion-icon>
               <ion-icon name="logo-android"></ion-icon>
             </div>
-            <!-- گروه دوم (کپی برای تداوم) -->
+
             <div class="marquee__group" aria-hidden="true">
               <ion-icon name="logo-facebook"></ion-icon>
-              <ion-icon name="logo-windows"></ion-icon>
               <ion-icon name="logo-apple"></ion-icon>
               <ion-icon name="logo-android"></ion-icon>
             </div>
@@ -136,128 +134,127 @@
 
       <!-- section-courses -->
 
-      <section class="section-courses">
-        <div class="container center-text">
-          <span class="subheading">Courses</span>
-          <h2 class="heading-secondary">Dive Into Project-Based Courses</h2>
-        </div>
+<section class="section-courses">
+  <!-- Section header: Title and subtitle -->
+  <div class="container center-text">
+    <span class="subheading">Courses</span>
+    <h2 class="heading-secondary">Dive Into Project-Based Courses</h2>
+  </div>
 
-        <div class="container grid grid--3--cols margin-bottom-md">
-          <div class="course">
-            <div class="card__media">
-              <img
-                class="img__courses"
-                src="./img/js-card.png"
-                alt="JavaScript Logo"
-              />
-              <span class="card__label">Frontend</span>
-            </div>
-            <!-- محتوا -->
-            <div class="card__body">
-              <h3 class="card__title">JavaScript Practices</h3>
-              <p class="card__subtitle">Project-Based Exercises All Levels</p>
-              <div class="card__rating">
-                <svg class="icon icon--star" viewBox="0 0 20 20">
-                  <path
-                    d="M10 15l-5.878 3.09L5.5 11.545 1 7.91l6.061-.909L10 1l2.939 6.001L19 7.91l-4.5 3.635 1.378 6.545z"
-                  />
-                </svg>
-                4.8 (138)
-              </div>
-              <ul class="card__tags">
-                <li>
-                  <svg class="icon icon--clock" viewBox="0 0 20 20">
-                    <path
-                      d="M10 1a9 9 0 100 18A9 9 0 0010 1zm1 9.5H9V5h2v5.5z"
-                    />
-                  </svg>
-                  48 Hours
-                </li>
-                <li>
-                  <svg class="icon icon--graduation" viewBox="0 0 20 20">
-                    <path
-                      d="M10 2L2 6l8 4 8-4-8-4zm0 6.1L4.07 6 10 3.9 15.93 6 10 8.1zM4 8.9v4.5l6 3.5 6-3.5V8.9l-6 3-6-3z"
-                    />
-                  </svg>
-                  10 Mini Courses
-                </li>
-              </ul>
-              <p class="card__description">
-                Lorem ipsum dolor sit amet consectetur. Platea etiam vitae sed
-                eget varius egestas. Massa nulla malesuada vestibulum aliquet
-                quis ut.
-              </p>
-              <a href="#" class="btn btn--primary">Start Practicing</a>
-            </div>
+  <!-- Courses grid: 3 columns -->
+  <div class="container grid grid--3--cols margin-bottom-md">
+    <!-- ------- card 1 ------- -->
+    <div class="card">
+      <img class="img__courses" src="./img/js-card.png" alt="JavaScript Practices Cover" />
+      <div class="card__body">
+        <!-- Card header: Title, subtitle, and rating -->
+        <div class="card__header">
+          <div>
+            <div class="card__title">JavaScript</div>
+            <div class="card__subtitle">Project-Based Exercises All Levels</div>
           </div>
-          <div class="course">
-            <img
-              src="img/img-courses/html-css.png"
-              class="course-img"
-              alt="meal avacado img"
-            />
-            <div class="course-content">
-              <div class="meal-tags">
-                <span class="tag tag--html">HTML</span>
-                <span class="tag tag--css">CSS</span>
-              </div>
-              <p class="course-title">HTML / CSS</p>
-              <ul class="meal-attributes">
-                <li class="meal-attribute">
-                  <ion-icon class="course-icon" name="time-outline"></ion-icon
-                  ><span><strong>35</strong> hours</span>
-                </li>
-                <li class="meal-attribute">
-                  <ion-icon
-                    class="course-icon"
-                    name="checkmark-circle-outline"
-                  ></ion-icon
-                  ><span>Real-world<strong> projects</strong></span>
-                </li>
-                <li class="meal-attribute">
-                  <ion-icon class="course-icon" name="star-outline"></ion-icon
-                  ><span><strong>4.8</strong> rating (441)</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="course">
-            <img
-              src="img/img-courses/pypy.png"
-              class="course-img"
-              alt="python img"
-            />
-            <div class="course-content">
-              <div class="meal-tags">
-                <span class="tag tag--python">Python</span>
-              </div>
-              <p class="course-title">Python</p>
-              <ul class="meal-attributes">
-                <li class="meal-attribute">
-                  <ion-icon class="course-icon" name="time-outline"></ion-icon
-                  ><span><strong>37</strong> hours</span>
-                </li>
-                <li class="meal-attribute">
-                  <ion-icon
-                    class="course-icon"
-                    name="checkmark-circle-outline"
-                  ></ion-icon
-                  ><span>Python <strong>essentials</strong></span>
-                </li>
-                <li class="meal-attribute">
-                  <ion-icon class="course-icon" name="star-outline"></ion-icon
-                  ><span><strong>4.6</strong> rating (876)</span>
-                </li>
-              </ul>
-            </div>
+          <div class="card__rating">
+            <svg class="star-icon" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+            </svg>
+            <span class="card__number-count">4.8 </span>
+            <span class="card__rating-count">(138)</span>
           </div>
         </div>
-
-        <div class="container all-recipes">
-          <a href="#" class="link">See all courses &rarr;</a>
+        <!-- Card features: Duration and number of mini courses -->
+        <div class="card__features">
+          <div class="card__feature">
+            48 Hours
+          </div>
+          <div class="card__feature">
+            10 Mini Courses
+          </div>
         </div>
-      </section>
+        <!-- Card description -->
+        <div class="card__description">
+          Lorem ipsum dolor sit amet consectetur. Platea etiam vitae sed eget varius egestas. Massa nulla malesuada vestibulum aliquet quis ut.
+        </div>
+        <!-- Card action button -->
+        <button class="btn--primary">Start Practicing</button>
+      </div>
+    </div>
+    <!-- ------- card 2 ------- -->
+    <div class="card">
+      <img class="img__courses" src="./img/js-card.png" alt="JavaScript Practices Cover" />
+      <div class="card__body">
+        <!-- Card header: Title, subtitle, and rating -->
+        <div class="card__header">
+          <div>
+            <div class="card__title">JavaScript</div>
+            <div class="card__subtitle">Project-Based Exercises All Levels</div>
+          </div>
+          <div class="card__rating">
+            <svg class="star-icon" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+            </svg>
+            <span class="card__number-count">4.8 </span>
+            <span class="card__rating-count">(138)</span>
+          </div>
+        </div>
+        <!-- Card features: Duration and number of mini courses -->
+        <div class="card__features">
+          <div class="card__feature">
+            48 Hours
+          </div>
+          <div class="card__feature">
+            10 Mini Courses
+          </div>
+        </div>
+        <!-- Card description -->
+        <div class="card__description">
+          Lorem ipsum dolor sit amet consectetur. Platea etiam vitae sed eget varius egestas. Massa nulla malesuada vestibulum aliquet quis ut.
+        </div>
+        <!-- Card action button -->
+        <button class="btn--primary">Start Practicing</button>
+      </div>
+    </div>
+    <!-- ------- card 3 ------- -->
+    <div class="card">
+      <img class="img__courses" src="./img/js-card.png" alt="JavaScript Practices Cover" />
+      <div class="card__body">
+        <!-- Card header: Title, subtitle, and rating -->
+        <div class="card__header">
+          <div>
+            <div class="card__title">JavaScript</div>
+            <div class="card__subtitle">Project-Based Exercises All Levels</div>
+          </div>
+          <div class="card__rating">
+            <svg class="star-icon" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+            </svg>
+            <span class="card__number-count">4.8 </span>
+            <span class="card__rating-count">(138)</span>
+          </div>
+        </div>
+        <!-- Card features: Duration and number of mini courses -->
+        <div class="card__features">
+          <div class="card__feature">
+            48 Hours
+          </div>
+          <div class="card__feature">
+            10 Mini Courses
+          </div>
+        </div>
+        <!-- Card description -->
+        <div class="card__description">
+          Lorem ipsum dolor sit amet consectetur. Platea etiam vitae sed eget varius egestas. Massa nulla malesuada vestibulum aliquet quis ut.
+        </div>
+        <!-- Card action button -->
+        <button class="btn--primary">Start Practicing</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- See all courses link below the cards, aligned right -->
+  <div class="container" style="text-align: right; margin-top: 1.5rem;">
+    <a href="#" class="link see-all-courses-link">See all courses &rarr;</a>
+  </div>
+</section>
 
       <!-- section-how -->
 

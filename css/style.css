@@ -360,10 +360,13 @@ strong {
 /*******************************/
 .section-hero {
   position: relative;
-  overflow: hidden; /* clip the blurred blobs */
+  overflow: hidden;
   background-color: #efedfb;
-  padding: 4.8rem 0;
-  height: 100vh;
+  height: calc(100vh - 9.6rem); /* 9.6rem = header height */
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+ 
 }
 
 /* make sure your real hero content sits above the blobs */
@@ -483,8 +486,9 @@ strong {
 .hero {
   max-width: 130rem;
   margin: 0 auto;
-  padding: 3.2rem;
-  text-align: center;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+    text-align: center;
   align-items: center;
 }
 
@@ -686,35 +690,6 @@ strong {
   padding: 2.4rem 4.8rem 4.8rem 4.8rem;
 }
 
-.meal-tags {
-  margin-bottom: 1.2rem;
-  display: flex;
-  gap: 0.4rem;
-}
-
-.tag {
-  display: inline-block;
-  padding: 0.4rem 0.8rem;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: #333;
-  border-radius: 100px;
-  font-weight: 600;
-}
-
-.tag--python {
-  background-color: #d1c2ff;
-}
-
-.tag--javascript {
-  background-color: #feed80;
-}
-.tag--html {
-  background-color: #fbd3b7;
-}
-.tag--css {
-  background-color: #b9d1f7;
-}
 .course-title {
   font-size: 2.4rem;
   color: #333;
@@ -722,35 +697,20 @@ strong {
   margin-bottom: 3.2rem;
 }
 
-.meal-attributes {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.meal-attribute {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-.course-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  color: #5f48d9;
-}
-
-.course-img {
-  width: 100%;
-}
-
 .all-recipes {
   text-align: center;
   font-size: 1.8rem;
 }
-
+.see-all-courses-link {
+  font-size: 1.5rem; /* یا هر سایزی که دوست داری */
+  font-weight: 600;
+  color: #5f48d9;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.see-all-courses-link:hover {
+  color: #333;
+}
 /*******************************/
 /* TESTOMONIALS SECTION */
 /*******************************/
@@ -1084,105 +1044,118 @@ strong {
 
 .card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(80, 40, 240, 0.08);
   overflow: hidden;
-  width: 320px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  margin: 40px auto;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
-
+.card:hover {
+  box-shadow: 0 12px 40px rgba(80, 40, 240, 0.15);
+  transform: translateY(-6px) scale(1.02);
+}
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .img__courses {
   width: 100%;
-  padding: 1rem;
+  display: block;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 18px;
+  object-fit: cover;
+  aspect-ratio: 1.6/1;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
 }
 
-.card__label {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 8px;
-}
-
-/* بخش متن */
 .card__body {
-  padding: 1.2rem;
-}
-.card__title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-  color: #130e2b;
-}
-.card__subtitle {
-  font-size: 1.6rem;
-  color: #555;
-  margin-bottom: 0.8rem;
+  padding: 1rem 1.5rem;
 }
 .card__rating {
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 1rem;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
 }
-.icon {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.4rem;
-  fill: #f7c948;
+.star-icon {
+  width: 1.6em;
+  height: 1.6em;
+  fill: #57c38c;
+  vertical-align: middle;
+  margin-bottom: 0.3rem;
 }
-.icon--star {
-  fill: #f7c948;
-}
-.icon--clock,
-.icon--graduation {
-  fill: #5f48d9;
-}
-
-/* تگ‌ها */
-.card__tags {
-  list-style: none;
-  display: flex;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
-}
-.card__tags li {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.9rem;
-  color: #5f48d9;
-  border: 1px solid #5f48d9;
-  border-radius: 8px;
-  padding: 0.4rem 0.8rem;
-}
-
-/* توضیحات */
-.card__description {
-  font-size: 0.875rem;
-  color: #777;
-  line-height: 1.4;
-  margin-bottom: 1.6rem;
-}
-
-/* دکمه */
-.btn {
-  display: block;
-  text-align: center;
-  text-decoration: none;
+.card__number-count {
+  font-size: 1.2rem;
   font-weight: 600;
-  border-radius: 8px;
-  padding: 0.8rem;
-  transition: background 0.2s;
 }
+.card__rating-count {
+  color: #8e8e8e;
+  font-size: 1.1rem;
+}
+
+.card__title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  color: #13103d;
+  text-align: left;
+}
+
+.card__subtitle {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.3rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.card__features {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+.card__feature {
+  border: 1.5px solid #d7c6fd;
+  border-radius: 9px;
+  padding: 6px 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  gap: 6px;
+  color: #5f48d9;
+}
+.feature-icon {
+  vertical-align: middle;
+}
+
+.card__description {
+  font-size: 1.25rem;
+  color: #909090;
+  line-height: 1.55;
+  margin-bottom: 2.1rem;
+}
+
 .btn--primary {
   background: #5f48d9;
   color: #fff;
+  padding: 1.4rem 0;
+  font-size: 1.3rem;
+  border-radius: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
 }
 .btn--primary:hover {
-  background: #5641c3;
+  background: #4e3ebc;
 }
