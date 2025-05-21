@@ -204,7 +204,10 @@ body {
 }
 .btn--full:hover,
 .btn--full:active {
-  background-color: #5641c3;
+  background-color: #fff;
+  
+  /* border: 2px solid #5f48d9; */
+  color: #5f48d9;
 }
 .btn--outline:link,
 .btn--outline:visited {
@@ -345,14 +348,19 @@ strong {
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
   padding: 1.2rem 2.4rem;
-  border-radius: 9px;
-  background-color: #5f48d9;
-  color: #fff;
+  border-radius: 50px;
+  border: 2px solid #5f48d9;
+  color: #272727;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
 }
 
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
   background-color: #5641c3;
+  color: #fff;
 }
 
 /*******************************/
