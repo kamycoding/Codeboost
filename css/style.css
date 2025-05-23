@@ -580,37 +580,31 @@ strong {
 
 /* animation section featured */
 
-/* ۱) overflow:hidden روی logos برای مخفی کردن بیرون‌زده */
 .logos {
   overflow: hidden;
   width: 100%;
 }
 
-/* ۲) کانتینر متحرک */
 .logos .marquee {
   display: flex;
-  /* مدت زمان ۲۰ ثانیه، خطی و بی‌نهایت */
   animation: scrollX 20s linear infinite;
 }
 
-/* ۳) گروه‌ها حتماً min-width:100% */
 .logos .marquee__group {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-shrink: 0; /* منع کوچک شدن */
-  min-width: 100%; /* هر گروه برابر عرض logos */
-  gap: 3rem; /* فاصلهٔ بین آیکن‌ها */
+  flex-shrink: 0; 
+  min-width: 100%;
+  gap: 3rem; 
 }
 
-/* ۴) استایل آیکن */
 .logos ion-icon {
   font-size: 4.5rem;
   filter: brightness(0);
   opacity: 0.5;
 }
 
-/* ۵) خودِ انیمیشن */
 @keyframes scrollX {
   from {
     transform: translateX(0);
@@ -710,7 +704,7 @@ strong {
   font-size: 1.8rem;
 }
 .see-all-courses-link {
-  font-size: 1.5rem; /* یا هر سایزی که دوست داری */
+  font-size: 1.5rem; 
   font-weight: 600;
   color: #5f48d9;
   text-decoration: none;
